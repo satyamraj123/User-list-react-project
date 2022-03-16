@@ -8,7 +8,7 @@ const AddUser=(props)=>{
 
     const addUserHandler=(event)=>{
         event.preventDefault();
-        if(userName.trim().length===0||age.trim().length==0){
+        if(userName.trim().length===0||age.trim().length===0){
             return;
         }
         //+ sign to convert string to a number
@@ -16,6 +16,7 @@ const AddUser=(props)=>{
             return;
         }
         console.log(userName+age);
+        props.onAddUser(userName,age);
         setAge('');
         setUserName('');
         return;
